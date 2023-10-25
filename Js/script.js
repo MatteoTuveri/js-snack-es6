@@ -16,7 +16,6 @@ Generiamo e stampiamo in console la lista per i segnaposto.
 
 
 */
-//Snack 1
 const invitati=[
     'Brad Pitt', 
     'Johnny Depp', 
@@ -32,11 +31,91 @@ const invitati=[
 const tableName = 'Tavolo Vip';
 
 const posto = invitati.map((element,index) =>{
-    
+
     const invitato ={
         tableName,
         guestName : element,
         place : index +1
     }
-    console.log(invitato);
+    return invitato;
+});
+console.log(posto);
+
+/* 
+    SNACK 2
+Abbiamo un elenco degli studenti di una facoltà, identificati da id, Nome e somma totale 
+dei loro voti di esame...
+
+1. Per preparare l'aula di un nuovo corso, dobbiamo stampare le targhe col nome degli 
+studenti: creare una lista contenente il loro nome tutto in maiuscolo
+2. Dobbiamo creare una lista di tutti gli studenti che hanno un totale di voti superiore a 70
+3. Dobbiamo creare una lista di tutti gli studenti che hanno un totale di voti superiore a 70 
+    e id superiore a 120
+*/
+
+const studenti = [
+    {
+        id: 213,
+        nome:'marco della rovere',
+        voto: 78
+    },
+    {
+        id: 110,
+        nome:'paola cortellessa',
+        voto: 96
+    },
+    {
+        id:250,
+        nome:'andrea mantegna',
+        voto:48
+    },
+    {
+        id:145,
+        nome:'gaia borromini',
+        voto:74
+    },
+    {
+        id:196,
+        nome:'luigi grimaldello',
+        voto:68
+    },
+    {
+        id:102,
+        nome:'piero della francesca',
+        voto:50
+    },
+    {
+        id:120,
+        nome:'francesca da polenta',
+        voto:84
+    },
+
+]
+
+const studentList = studenti.map((element,index) =>{
+    return studenti[index].nome.toUpperCase();
+});
+console.log(studentList);
+
+const student70 = studenti.filter((element) =>{
+    let voto = element.voto;
+    if (voto > 70){
+        return true;
+    }
+    else{
+        return false;
+    }
 })
+console.log(student70);
+
+const student70id = studenti.filter((element) =>{
+    let voto = element.voto;
+    let id = element.id;
+    if (voto > 70 && id >120){
+        return true;
+    }
+    else{
+        return false;
+    }
+})
+console.log(student70id);
