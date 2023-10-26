@@ -119,3 +119,47 @@ const student70id = studenti.filter((element) =>{
     }
 })
 console.log(student70id);
+
+/* 
+    SNACK 3
+Creare un array di oggetti:
+Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
+Stampare in console la bici con peso minore utilizzando destructuring e template literal
+
+*/
+const bikeList = [
+    {
+        nome:'rocket',
+        peso:20
+    },
+    {
+        nome:'racoon',
+        peso:12
+    },
+    {
+        nome:'racer',
+        peso:15
+    },
+    {
+        nome:'starlord',
+        peso:22
+    },
+    {
+        nome:'light',
+        peso:10
+    }
+];
+const weights = bikeList.map((element,index) => {
+    const {peso} = bikeList[index];
+    return peso
+});
+
+let min = Math.min(...weights);
+
+const bike = bikeList.filter((elemento)=>{
+    if(elemento.peso === min){
+        return this
+    }
+});
+
+console.log(bike)
