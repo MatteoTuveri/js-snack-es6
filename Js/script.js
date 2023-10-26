@@ -162,4 +162,59 @@ const bike = bikeList.filter((elemento)=>{
     }
 });
 
-console.log(bike)
+console.log(bike);
+
+/* 
+    SNACK 4
+Creare un array di oggetti di squadre di calcio. Ogni squadra avrà diverse 
+proprietà: nome, punti fatti, falli subiti. Nome sarà l’unica proprietà da compilare,
+le altre saranno tutte settate a 0. Generare numeri random al posto degli 0 nelle 
+proprietà: Punti fatti e falli subiti. Infine usando la destrutturazione creiamo un 
+nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
+
+*/
+
+const teamsList = [
+    {
+        nome:'roma',
+        punti:0,
+        falli:0
+    },
+    {
+        nome:'lazio',
+        punti:0,
+        falli:0
+    },
+    {
+        nome:'juve',
+        punti:0,
+        falli:0
+    },
+    {
+        nome:'inter',
+        punti:0,
+        falli:0
+    },
+    {
+        nome:'napoli',
+        punti:0,
+        falli:0
+    }
+];
+
+const nomiEFalli = teamsList.map((element,index) => {
+    teamsList[index].punti = getRndInteger(0,20);
+    teamsList[index].falli = getRndInteger(0,20);
+    const{nome,falli} = teamsList[index];
+    return {
+        nome,
+        falli
+    }
+});
+
+console.log(teamsList);
+console.log(nomiEFalli);
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
